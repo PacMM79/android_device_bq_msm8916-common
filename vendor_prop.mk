@@ -1,6 +1,7 @@
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
+    af.fast_track_multiplier=1 \
     audio.offload.video=true \
     audio.deep_buffer.media=true \
     audio.offload.min.duration.secs=30 \
@@ -15,6 +16,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.av.streaming.offload.enable=true \
     vendor.audio.offload.buffer.size.kb=64 \
     vendor.audio.offload.gapless.enabled=true \
+    vendor.audio_hal.period_size=192 \
     vendor.voice.path.for.pcm.voip=true
 
 # Bluetooth
