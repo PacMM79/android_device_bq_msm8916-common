@@ -1,8 +1,4 @@
 
-# Art
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-flags=--no-watch-dog
-
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.video=true \
