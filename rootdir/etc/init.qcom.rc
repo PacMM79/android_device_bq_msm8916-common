@@ -186,6 +186,7 @@ on post-fs-data
 
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed"
+    restart cameraserver
 
 # FM enable/disable triggers
 on property:vendor.hw.fm.init=1
