@@ -18,7 +18,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.offload.gapless.enabled=true \
     vendor.audio_hal.period_size=192 \
     vendor.voice.path.for.pcm.voip=true \
-    ro.config.vc_call_vol_steps=7
+    ro.config.vc_call_vol_steps=7 \
+    ro.config.media_vol_steps=25
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
