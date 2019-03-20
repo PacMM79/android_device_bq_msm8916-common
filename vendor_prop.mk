@@ -125,6 +125,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=1 \
     persist.radio.rat_on=combine \
     persist.data.qmi.adb_logmask=0 \
+    persist.radio.add_power_save=1 \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.sib16_support=1 \
     persist.radio.multisim.config=dsds \
