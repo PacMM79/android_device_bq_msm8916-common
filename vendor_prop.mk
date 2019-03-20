@@ -101,8 +101,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mmp.enable.3g2=true \
     media.stagefright.use-awesome=false \
     vidc.enc.narrow.searchrange=1 \
-    drm.service.enabled=true \
-    persist.media.treble_omx=false
+    drm.service.enabled=true
 
 # min/max cpu in core control
 PRODUCT_PROPERTY_OVERRIDES += \
