@@ -312,4 +312,4 @@ service wcnss-service /vendor/bin/wcnss_service
 service charger /charger
     class charger
     group system graphics
-    seclabel u:r:charger:s0
+    seclabel u:r:healthd:s0
