@@ -209,9 +209,7 @@ PRODUCT_PACKAGES += \
 # Qualcomm
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true \
-    ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so \
-    ro.core_ctl_min_cpu=2 \
-    ro.core_ctl_max_cpu=4
+    ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 # Ramdisk
 PRODUCT_PACKAGES += \
