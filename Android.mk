@@ -135,10 +135,9 @@ $(WIDEVINE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(WIDEVINE_SYMLINKS)
 
-# Create a link for the WCNSS config file, which ends up as a writable
-# version in /vendor/etc/wifi/
-$(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware/wlan/prima; \
-    ln -sf /vendor/etc/wifi/WCNSS_qcom_cfg.ini \
-	    $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini)
+WCNSS_CFG_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
+$(WCNSS_CFG_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf /data/vendor/wifi/$(notdir $@) $@
 
 endif
