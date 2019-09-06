@@ -77,7 +77,7 @@ on boot
     mkdir /dev/socket/netmgr 0750 radio radio
 
     # Remove SUID bit for iproute2 ip tool
-    chmod 0755 /system/bin/ip
+    chmod 0755 /vendor/bin/ip
 
     # Prevents permission denied error for telephony
     chmod 0644 /proc/cmdline
@@ -203,8 +203,9 @@ service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
 service rmt_storage /vendor/bin/rmt_storage
     class core
     user root
-    group system wakelock
+    group root system wakelock
     shutdown critical
+    writepid /dev/cpuset/system-background/tasks
 
 service hciattach /vendor/bin/init.qcom.bt.sh
     class late_start
@@ -249,7 +250,7 @@ service wpa_supplicant /system/vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
-service ril-daemon2 /vendor/bin/hw/rild -c 2
+service ril-daemon2 /system/vendor/bin/hw/rild -c 2
     class main
     user radio
     group radio cache inet misc audio log readproc wakelock
@@ -297,6 +298,10 @@ on property:init.svc.surfaceflinger=stopped
 
 on property:init.svc.surfaceflinger=running
     start ppd
+
+on property:init.svc.surfaceflinger=restarting
+    stop hwcomposer-2-1
+    start hwcomposer-2-1
 
 service wcnss-service /vendor/bin/wcnss_service
     class late_start

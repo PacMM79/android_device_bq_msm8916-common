@@ -128,7 +128,7 @@ TARGET_HAS_NO_WLAN_STATS := true
 TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
-TARGET_SYSTEM_PROP := device/bq/msm8916-common/system.prop
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true

@@ -20,6 +20,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
+# Properties
+-include $(LOCAL_PATH)/vendor_prop.mk
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
@@ -36,8 +39,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
-    libqcomvoiceprocessing \
-    tinymix
+    libqcomvoiceprocessing
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
@@ -93,7 +95,6 @@ PRODUCT_COPY_FILES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    copybit.msm8916 \
     gralloc.msm8916 \
     hwcomposer.msm8916 \
     libtinyxml \
@@ -218,13 +219,6 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
-
-# Qualcomm
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.timed.enable=true \
-    ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so \
-    ro.core_ctl_min_cpu=2 \
-    ro.core_ctl_max_cpu=4
 
 # Ramdisk
 PRODUCT_PACKAGES += \
