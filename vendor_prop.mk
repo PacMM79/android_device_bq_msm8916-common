@@ -66,7 +66,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.gpu_comp_tiling=1 \
     sys.hwc.gpu_perf_mode=1 \
-    debug.enable.sglscale=1
+    debug.enable.sglscale=1 \
+    debug.hwui.use_buffer_age=false
 
 # Enable B service adj transition by default
 PRODUCT_PROPERTY_OVERRIDES += \
