@@ -63,7 +63,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.composition.type=c2d \
     persist.hwc.mdpcomp.enable=true \
     debug.mdpcomp.idletime=600 \
-    debug.sf.enable_hwc_vds=1 \
     debug.sf.gpu_comp_tiling=1 \
     sys.hwc.gpu_perf_mode=1 \
     debug.enable.sglscale=1 \
