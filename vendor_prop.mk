@@ -23,6 +23,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.boot.btmacaddr=00:00:00:00:00:00 \
+    vendor.bluetooth.soc=pronto \
     vendor.qcom.bluetooth.soc=pronto \
     ro.bluetooth.hfp.ver=1.7 \
     ro.qualcomm.bt.hci_transport=smd \
