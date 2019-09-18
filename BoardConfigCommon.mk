@@ -65,6 +65,7 @@ FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
 TARGET_NEEDS_LEGACY_CAMERA_HAL1_DYN_NATIVE_HANDLE := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/vendor/bin/mm-qcamera-daemon=23
+
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
@@ -141,6 +142,7 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 
 # RIL
 TARGET_RIL_VARIANT := caf
+TARGET_USES_OLD_MNC_FORMAT := true
 
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
