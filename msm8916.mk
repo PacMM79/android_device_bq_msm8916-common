@@ -29,6 +29,10 @@ PRODUCT_PACKAGES += \
     com.dsi.ant.antradio_library \
     libantradio
 
+# Art
+PRODUCT_PROPERTY_OVERRIDES += \
+	dalvik.vm.dex2oat-flags=--no-watch-dog
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.msm8916 \
@@ -95,6 +99,14 @@ PRODUCT_COPY_FILES += \
 
 # Display
 PRODUCT_PACKAGES += \
+	android.hardware.graphics.allocator@2.0-impl \
+	android.hardware.graphics.allocator@2.0-service \
+	android.hardware.graphics.composer@2.1-impl \
+	android.hardware.graphics.mapper@2.0-impl \
+	android.hardware.memtrack@1.0-impl \
+	android.hardware.memtrack@1.0-service \
+	android.hardware.renderscript@1.0-impl \
+	android.hardware.renderscript@1.0-service \
     gralloc.msm8916 \
     hwcomposer.msm8916 \
     libtinyxml \
@@ -160,6 +172,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
+	android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service.bq_8916
 
 # LiveDisplay
@@ -212,6 +225,12 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
+# Preopt SystemUI
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+	SystemUI \
+	Settings \
+	Launcher3
+
 # Privapp Whitelist
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
@@ -258,7 +277,8 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-service.bq_8916
+    android.hardware.vibrator@1.0-impl \
+	android.hardware.vibrator@1.0-service.bq_8916
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -278,7 +298,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     libcurl \
     wcnss_service
-    
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
