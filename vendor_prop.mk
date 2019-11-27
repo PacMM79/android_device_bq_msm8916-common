@@ -107,11 +107,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vidc.enc.narrow.searchrange=1 \
     drm.service.enabled=true
 
-# min/max cpu in core control
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.core_ctl_min_cpu=2 \
-    ro.core_ctl_max_cpu=4
-
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so

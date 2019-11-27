@@ -110,9 +110,6 @@ on boot
     chown system system /proc/ctp_if_upgrade_version
     chown system system /proc/ctp_if_upgrade_old_version
     
-    # Permissions required for power HAL
-    chown system system /sys/devices/system/cpu/cpu0/core_ctl/max_cpus
-
 on late-fs
     # Start bootanim and its dependencies
     start surfaceflinger
