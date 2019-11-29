@@ -101,6 +101,10 @@ TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+BOARD_USES_ADRENO := true
+TARGET_USES_QCOM_DISPLAY_BSP := true
+TARGET_CONTINUOUS_SPLASH_ENABLED := true
+TARGET_USES_GRALLOC1 := true
 
 # Shader cache config options
 # Maximum size of the GLES Shaders that can be cached for reuse.
@@ -111,6 +115,17 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 # binaries. Decrease the size if RAM or Flash Storage size is a limitation
 # of the device.
 MAX_EGL_CACHE_SIZE := 2048*1024
+
+# GPS
+TARGET_NO_RPC := true
+USE_DEVICE_SPECIFIC_GPS := true
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
+
+# Keystore
+TARGET_PROVIDES_KEYMASTER := true
+
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
 
 # Healthd
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
