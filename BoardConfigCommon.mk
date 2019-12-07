@@ -70,6 +70,10 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
+# Doze mode
+PRODUCT_PACKAGES += \
+    Doze
+
 # Add suffix variable to uniquely identify the board
 TARGET_BOARD_SUFFIX := _32
 
