@@ -137,7 +137,7 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Lineagehw
-BOARD_HARDWARE_CLASS += device/bq/msm8916-common/lineagehw/src
+JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(DEVICE_PATH)/lineagehw|**/*.java
 
 # Power
 TARGET_HAS_NO_POWER_STATS := true
