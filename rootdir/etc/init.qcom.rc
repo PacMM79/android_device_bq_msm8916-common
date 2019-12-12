@@ -112,9 +112,9 @@ on boot
     
 on late-fs
     # Start bootanim and its dependencies
+    start vendor.configstore-hal
     start surfaceflinger
     start bootanim
-    start configstore-hal-1-0
     start vendor.gralloc-2-0
 
     # Mount RW partitions which need run fsck
