@@ -31,7 +31,7 @@ PRODUCT_PACKAGES += \
 
 # Art
 PRODUCT_PROPERTY_OVERRIDES += \
-	dalvik.vm.dex2oat-flags=--no-watch-dog
+    dalvik.vm.dex2oat-flags=--no-watch-dog
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -99,26 +99,16 @@ PRODUCT_COPY_FILES += \
 
 # Display
 PRODUCT_PACKAGES += \
-	android.hardware.graphics.allocator@2.0-impl \
-	android.hardware.graphics.allocator@2.0-service \
-	android.hardware.graphics.composer@2.1-impl \
-	android.hardware.graphics.mapper@2.0-impl \
-	android.hardware.memtrack@1.0-impl \
-	android.hardware.memtrack@1.0-service \
-	android.hardware.renderscript@1.0-impl \
-	android.hardware.renderscript@1.0-service \
-    gralloc.msm8916 \
-    hwcomposer.msm8916 \
-    libtinyxml \
-    memtrack.msm8916
-
-PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service
+    android.hardware.memtrack@1.0-service \
+    gralloc.msm8916 \
+    hwcomposer.msm8916 \
+    libtinyxml \
+    memtrack.msm8916
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -172,7 +162,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-	android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service.bq_8916
 
 # LiveDisplay
@@ -227,9 +217,9 @@ PRODUCT_COPY_FILES += \
 
 # Preopt SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-	SystemUI \
-	Settings \
-	Launcher3
+    SystemUI \
+    Settings \
+    Launcher3
 
 # Privapp Whitelist
 PRODUCT_COPY_FILES += \
@@ -278,7 +268,7 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
-	android.hardware.vibrator@1.0-service.bq_8916
+    android.hardware.vibrator@1.0-service.bq_8916
 
 # Wifi
 PRODUCT_PACKAGES += \
