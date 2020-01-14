@@ -1,2 +1,4 @@
 allow wcnss_service persist_file:file setattr;
 allow wcnss_service self:capability chown;
+
+allow wcnss_service serialno_prop:file { getattr open read };
