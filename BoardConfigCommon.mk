@@ -105,6 +105,10 @@ TARGET_USES_ION := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 BOARD_USES_ADRENO := true
 TARGET_USES_GRALLOC1 := true
+TARGET_HAVE_NEW_GRALLOC := true
+SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+TARGET_USE_COMPAT_GRALLOC_PERFORM := true
 
 # Shader cache config options
 # Maximum size of the GLES Shaders that can be cached for reuse.
@@ -140,6 +144,9 @@ JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(DEVICE_PATH)/lineagehw|**/*.jav
 TARGET_HAS_NO_POWER_STATS := true
 TARGET_HAS_NO_WLAN_STATS := true
 TARGET_USES_INTERACTION_BOOST := true
+TARGET_POWERHAL_VARIANT := qcom
+CM_POWERHAL_EXTENSION := qcom
+WITH_QC_PERF := true
 
 # Properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
