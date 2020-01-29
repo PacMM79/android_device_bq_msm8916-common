@@ -67,7 +67,7 @@ TARGET_QCOM_BLUETOOTH_VARIANT := caf-msm8916
 # Camera
 TARGET_NEEDS_LEGACY_CAMERA_HAL1_DYN_NATIVE_HANDLE := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-    /system/vendor/bin/mm-qcamera-daemon=23
+    /system/vendor/bin/mm-qcamera-daemon=25
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
