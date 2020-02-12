@@ -3,3 +3,14 @@ allow init self:tcp_socket { create setopt bind listen };
 allow init node:tcp_socket node_bind;
 
 allow init system_data_file:fifo_file write;
+allow init input_device:chr_file write;
+allow init input_device:chr_file ioctl;
+
+allow init system_file:dir relabelfrom;
+allow init system_file:lnk_file relabelfrom;
+allow init system_file:file relabelfrom;
+allow init vendor_configs_file:dir relabelfrom;
+allow init vendor_configs_file:file relabelfrom;
+allow init vendor_file:dir relabelfrom;
+allow init sysfs:file setattr;
+

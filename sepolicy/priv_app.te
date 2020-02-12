@@ -1,0 +1,2 @@
+allow priv_app property_socket:sock_file write;
+allow priv_app sysfs:file { read open write };

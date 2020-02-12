@@ -1,0 +1,2 @@
+allow zygote proc_cmdline:file { read open write getattr };
+allow zygote device:file open;
