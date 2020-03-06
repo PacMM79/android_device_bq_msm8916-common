@@ -50,7 +50,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@4.0-impl \
     android.hardware.audio.effect@2.0-service \
-    android.hardware.soundtrigger@2.0-impl \
+    android.hardware.soundtrigger@2.1-impl \
+    android.hardware.bluetooth.a2dp@1.0-impl \
     android.hardware.broadcastradio@1.0-impl
 
 PRODUCT_COPY_FILES += \
@@ -88,10 +89,6 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
     libxml2
-
-# ConfigStore
-PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.1-service
 
 # Data
 PRODUCT_COPY_FILES += \
@@ -264,10 +261,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
-
 # Usb
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.bq_8916
@@ -293,6 +286,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
+    android.hardware.wifi.offload@1.0-service \
     libcurl \
     wcnss_service
 
