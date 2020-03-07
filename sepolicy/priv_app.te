@@ -1,2 +1,4 @@
 allow priv_app property_socket:sock_file write;
 allow priv_app sysfs:file { read open write };
+allow priv_app dolby_prop:file { read open write getattr };
+allow priv_app init:unix_stream_socket connectto;
