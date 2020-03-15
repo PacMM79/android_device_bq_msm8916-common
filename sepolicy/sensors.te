@@ -3,6 +3,4 @@ allow sensors sensors_data_file:dir write;
 allow sensors sysfs:file rw_file_perms;
 allow sensors input_device:dir r_dir_perms;
 allow sensors input_device:chr_file r_file_perms;
-allow sensors system_data_file:dir write;
-allow sensors system_data_file:dir add_name;
-allow sensors system_data_file:dir remove_name;
+allow sensors system_data_file:dir { write add_name remove_name };

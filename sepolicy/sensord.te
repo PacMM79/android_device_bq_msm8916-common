@@ -7,5 +7,3 @@ allow sensors self:capability fowner;
 
 # Allow fifo file handling in /data/misc/sensor
 allow sensors sensors_data_file:fifo_file create_file_perms;
-
-

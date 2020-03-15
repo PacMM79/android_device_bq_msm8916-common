@@ -1,6 +1,3 @@
 allow ueventd unlabeled:file { getattr open read };
 allow ueventd unlabeled:dir search;
-
-allow ueventd proc:file read;
-allow ueventd proc:file open;
-allow ueventd proc:file getattr;
+allow ueventd proc:file { read open getattr };
