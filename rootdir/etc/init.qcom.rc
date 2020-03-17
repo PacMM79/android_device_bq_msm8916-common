@@ -164,9 +164,17 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
-    # Create directory used by the DASH client
-    mkdir /data/misc/dash 0770 media audio
-    
+    # Create directory used by audio subsystem
+    mkdir /data/misc/audio 0770 audio audio
+
+    # Create directory for audio delta files
+    mkdir /data/misc/audio/acdbdata 0770 media audio
+    mkdir /data/misc/audio/acdbdata/delta 0770 media audio
+
+    mkdir /data/vendor/ramdump 0771 root system
+    mkdir /data/vendor/bluetooth 0770 bluetooth bluetooth
+    mkdir /data/vendor/ramdump/bluetooth 0770 bluetooth bluetooth
+
     # Create directories for Location services
     mkdir /data/misc/location 0770 gps gps
     mkdir /data/misc/location/mq 0770 gps gps
