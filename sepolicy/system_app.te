@@ -6,7 +6,7 @@ allow system_app sysfs_g_sensor:file rw_file_perms;
 allow system_app shell_data_file:dir search;
 allow system_app sysfs_zram:dir search;
 allow system_app sysfs_zram:file { read open getattr };
-allow system_app proc_pagetypeinfo:file { open getattr };
+allow system_app proc_pagetypeinfo:file { read open getattr };
 allow system_app netd:binder call;
 allow system_app vold:binder call;
 #allow system_app storaged:binder call;
