@@ -62,13 +62,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=480 \
+    ro.opengles.version=196610 \
+    debug.sf.disable_backpressure=1 \
+    debug.sf.enable_gl_backpressure=1 \
+    debug.sf.latch_unsignaled=1 \
+    lockscreen.rot_override=1 \
     debug.composition.type=c2d \
-    persist.hwc.mdpcomp.enable=true \
-    debug.mdpcomp.idletime=600 \
-    debug.sf.gpu_comp_tiling=1 \
+    persist.hwc.mdpcomp.enable=1 \
     sys.hwc.gpu_perf_mode=1 \
-    debug.enable.sglscale=1 \
-    debug.hwui.use_buffer_age=false
+    debug.cpurend.vsync=false \
+    debug.enable.sglscale=1
 
 # Enable B service adj transition by default
 PRODUCT_PROPERTY_OVERRIDES += \
