@@ -170,6 +170,9 @@ DEVICE_MANIFEST_FILE := device/bq/msm8916-common/manifest.xml
 # Widevine
 BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
 
+# Peripheral manager
+TARGET_PER_MGR_ENABLED := true
+
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true

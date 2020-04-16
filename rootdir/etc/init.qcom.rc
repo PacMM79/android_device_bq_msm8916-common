@@ -339,6 +339,11 @@ on property:init.svc.surfaceflinger=running
 on property:init.svc.surfaceflinger=restarting
     stop ppd
 
+service per_mgr /system/vendor/bin/pm-service
+    class core
+    user system
+    group system
+
 service wcnss-service /vendor/bin/wcnss_service
     class late_start
     user system
