@@ -68,6 +68,10 @@ BLUETOOTH_HCI_USE_MCT := true
 FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
 TARGET_QCOM_BLUETOOTH_VARIANT := caf-msm8916
 
+# Bootanimation
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+
 # Camera
 TARGET_NEEDS_LEGACY_CAMERA_HAL1_DYN_NATIVE_HANDLE := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
@@ -87,6 +91,10 @@ MALLOC_SVELTE := true
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+
+# Exclude serif fonts for saving system.img size.
+EXCLUDE_SERIF_FONTS := true
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x02000000
@@ -129,6 +137,9 @@ TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 # Lineagehw
 JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(DEVICE_PATH)/lineagehw|**/*.java
 
+# Peripheral manager
+TARGET_PER_MGR_ENABLED := true
+
 # Power
 TARGET_HAS_NO_WLAN_STATS := true
 TARGET_USES_INTERACTION_BOOST := true
@@ -169,9 +180,6 @@ DEVICE_MANIFEST_FILE := device/bq/msm8916-common/manifest.xml
 
 # Widevine
 BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
-
-# Peripheral manager
-TARGET_PER_MGR_ENABLED := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true

@@ -39,7 +39,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@4.0-impl \
     android.hardware.audio.effect@2.0-service \
-    android.hardware.soundtrigger@2.1-impl \
+    android.hardware.soundtrigger@2.0-impl \
     android.hardware.bluetooth.a2dp@1.0-impl \
     android.hardware.broadcastradio@1.0-impl \
     audio.primary.msm8916 \
@@ -125,6 +125,12 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service
 
+# limit dex2oat threads to improve thermals
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.boot-dex2oat-threads=8 \
+    dalvik.vm.dex2oat-threads=8 \
+    dalvik.vm.image-dex2oat-threads=8
+
 # Ebtables
 PRODUCT_PACKAGES += \
     ebtables \
@@ -157,14 +163,8 @@ PRODUCT_COPY_FILES += \
 
 # Health
 PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-impl \
     android.hardware.health@2.0-service
-
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.base@1.0_system \
-    android.hidl.manager@1.0 \
-    android.hidl.manager@1.0_system
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -267,7 +267,8 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl
+    android.hardware.sensors@1.0-impl \
+    libsensorndkbridge
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -276,6 +277,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
+
+# Time
+PRODUCT_PACKAGES += \
+    timekeep \
+    TimeKeep
 
 # Usb
 PRODUCT_PACKAGES += \
