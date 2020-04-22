@@ -147,6 +147,9 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs
 
+# Exclude AudioFX
+TARGET_EXCLUDES_AUDIOFX := true
+
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
