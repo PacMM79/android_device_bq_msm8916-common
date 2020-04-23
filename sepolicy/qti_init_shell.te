@@ -8,4 +8,4 @@ allow qti_init_shell qmuxd_socket:sock_file { write create setattr };
 allow qti_init_shell self:socket create;
 allow qti_init_shell sysfs:dir setattr;
 allow qti_init_shell sysfs:file write;
-#allow qti_init_shell touchpanel_sysfs:file { getattr setattr };
+allow qti_init_shell touchpanel_sysfs:file { getattr setattr };
