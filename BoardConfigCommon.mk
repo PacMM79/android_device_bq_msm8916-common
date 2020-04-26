@@ -90,7 +90,12 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 # Add suffix variable to uniquely identify the board
 TARGET_BOARD_SUFFIX := _32
 
+# Malloc implementation
 MALLOC_SVELTE := true
+
+# Disable FaceUnlock
+TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK := true
+TARGET_FACE_UNLOCK_SUPPORTED := false
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
