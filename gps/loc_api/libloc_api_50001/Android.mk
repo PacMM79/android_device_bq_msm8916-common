@@ -7,7 +7,6 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := libloc_eng
 LOCAL_MODULE_OWNER := qcom
-LOCAL_VENDOR_MODULE := true
 
 LOCAL_MODULE_TAGS := optional
 
@@ -17,7 +16,8 @@ LOCAL_SHARED_LIBRARIES := \
     libdl \
     liblog \
     libloc_core \
-    libgps.utils
+    libgps.utils \
+    libprocessgroup
 
 LOCAL_SRC_FILES += \
     loc_eng.cpp \
@@ -68,7 +68,6 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := gps.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_OWNER := qcom
-LOCAL_VENDOR_MODULE := true
 
 LOCAL_MODULE_TAGS := optional
 
@@ -81,7 +80,8 @@ LOCAL_SHARED_LIBRARIES := \
     libloc_eng \
     libloc_core \
     libgps.utils \
-    libdl
+    libdl \
+    libprocessgroup
 
 ifneq ($(filter $(TARGET_DEVICE), apq8084 msm8960), false)
 endif

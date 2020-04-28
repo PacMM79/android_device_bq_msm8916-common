@@ -77,6 +77,11 @@ void MsgTask::sendMsg(const LocMsg* msg) const {
     msg_q_snd((void*)mQ, (void*)msg, LocMsgDestroy);
 }
 
+void MsgTask::prerun() {
+    // make sure we do not run in background scheduling group
+    set_sched_policy(gettid(), SP_FOREGROUND);
+}
+
 bool MsgTask::run() {
     LOC_LOGV("MsgTask::loop() listening ...\n");
     LocMsg* msg;
