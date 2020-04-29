@@ -84,6 +84,17 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 PRODUCT_PACKAGES += \
     Doze
 
+# Display
+TARGET_SCREEN_DENSITY := 480
+BOARD_USES_ADRENO := true
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_GRALLOC1 := true
+TARGET_USES_ION := true
+TARGET_USES_HWC2 := true
+MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+
 # Add suffix variable to uniquely identify the board
 TARGET_BOARD_SUFFIX := _32
 
@@ -109,13 +120,6 @@ TARGET_USES_MKE2FS := true
 # FM
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
-
-# Graphics
-TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02002000
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-TARGET_USES_C2D_COMPOSITION := true
-TARGET_USES_ION := true
-TARGET_CONTINUOUS_SPLASH_ENABLED := true
 
 # GPS
 TARGET_NO_RPC := true
@@ -171,6 +175,9 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib/libcamera_client.so|libcamera_parameters_shim.so \
     /vendor/lib/libizat_core.so|libshims_get_process_name.so \
     /vendor/lib/libflp.so|libshims_flp.so
+
+# SurfaceFlinger
+TARGET_USE_AOSP_SURFACEFLINGER := true
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true

@@ -63,15 +63,55 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=480 \
-    ro.opengles.version=196610 \
-    debug.sf.disable_backpressure=1 \
+    debug.sf.enable_hwc_vds=1 \
+    debug.egl.hw=0 \
+    debug.sf.hw=0 \
     debug.sf.latch_unsignaled=1 \
-    lockscreen.rot_override=1 \
-    debug.composition.type=c2d \
     persist.hwc.mdpcomp.enable=true \
-    sys.hwc.gpu_perf_mode=1 \
-    debug.cpurend.vsync=false \
-    debug.enable.sglscale=1
+    dev.pm.dyn_samplingrate=1 \
+    persist.demo.hdmirotationlock=false \
+    ro.opengles.version=196610 \
+    sdm.debug.disable_skip_validate=1 \
+    debug.gralloc.enable_fb_ubwc=1 \
+    persist.camera.preview.ubwc=0 \
+    persist.camera.video.ubwc=0 \
+    persist.hwc.enable_vds=1 \
+    debug.sf.recomputecrop=0 \
+    debug.enable.sglscale=1 \
+    vendor.display.enable_default_color_mode=1 \
+    vendor.gralloc.enable_fb_ubwc=1 \
+    vendor.display.disable_skip_validate=1 \
+    persist.debug.wfd.enable=1 \
+    vendor.video.disable.ubwc=1 \
+    vendor.gralloc.disable_wb_ubwc=1 \
+    persist.sys.wfd.nohdcp=1 \
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0
+
+# HWUI
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hwui.texture_cache_size=72 \
+    ro.hwui.layer_cache_size=48 \
+    ro.hwui.r_buffer_cache_size=8 \
+    ro.hwui.path_cache_size=32 \
+    ro.hwui.gradient_cache_size=1 \
+    ro.hwui.drop_shadow_cache_size=6 \
+    ro.hwui.texture_cache_flushrate=0.4 \
+    ro.hwui.text_small_cache_width=1024 \
+    ro.hwui.text_small_cache_height=1024 \
+    ro.hwui.text_large_cache_width=2048 \
+    ro.hwui.text_large_cache_height=1024
+
+# SurfaceFlinger
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.early_phase_offset_ns=1500000 \
+    debug.sf.early_app_phase_offset_ns=1500000 \
+    debug.sf.early_gl_phase_offset_ns=3000000 \
+    debug.sf.early_gl_app_phase_offset_ns=15000000
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
+    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
 
 # Enable B service adj transition by default
 PRODUCT_PROPERTY_OVERRIDES += \
