@@ -12,3 +12,4 @@ allow system_app vold:binder call;
 #allow system_app storaged:binder call;
 allow system_app wificond:binder call;
 allow system_app perfprofd:binder call;
+allow system_app init:binder call;

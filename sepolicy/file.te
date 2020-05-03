@@ -4,3 +4,6 @@ type proc_kernel_sched, fs_type;
 type touchpanel_sysfs, fs_type, sysfs_type;
 type leds_device, file_type, dev_type;
 type sysfs_g_sensor, sysfs_type, fs_type;
+
+# Keydisabler
+type sysfs_keypad, fs_type, sysfs_type;
