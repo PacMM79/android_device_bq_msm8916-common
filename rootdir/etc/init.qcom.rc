@@ -51,7 +51,7 @@ on early-boot
     write /sys/bus/msm_subsys/devices/subsys1/restart_level "related"
     # Modem
     write /sys/bus/msm_subsys/devices/subsys2/restart_level "related"
-    
+
     write /sys/kernel/boot_adsp/boot 1
     chown root audio /sys/kernel/boot_adsp/boot
 
@@ -82,10 +82,10 @@ on boot
 
     # update foreground cpuset now that processors are up
     # reserve CPU 3 for the top app and camera daemon
-    write /dev/cpuset/foreground/cpus 0-2,4-5
-    write /dev/cpuset/foreground/boost/cpus 0-3
-    write /dev/cpuset/background/cpus 4-6
-    write /dev/cpuset/system-background/cpus 4-6
+    write /dev/cpuset/foreground/cpus 4-7
+    write /dev/cpuset/foreground/boost/cpus 0-2
+    write /dev/cpuset/background/cpus 4-7
+    write /dev/cpuset/system-background/cpus 4-7
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/restricted/cpus 0-3
 
@@ -142,7 +142,7 @@ on boot
     chown system system /proc/ctp_if_upgrade
     chown system system /proc/ctp_if_upgrade_version
     chown system system /proc/ctp_if_upgrade_old_version
-    
+
 on late-fs
     # Start bootanim and its dependencies
     start vendor.configstore-hal
@@ -179,7 +179,7 @@ on post-fs-data
 
     # Create /data/time folder for time-services
     mkdir /data/time/ 0700 system system
-    
+
     # Tombstones
     mkdir /data/tombstones/modem 0771 system system
     mkdir /data/tombstones/lpass 0771 system system
