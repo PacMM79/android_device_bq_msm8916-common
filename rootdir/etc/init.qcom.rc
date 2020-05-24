@@ -145,6 +145,7 @@ on boot
 
 on late-fs
     # Start bootanim and its dependencies
+    start servicemanager
     start vendor.configstore-hal
     start surfaceflinger
     start bootanim
