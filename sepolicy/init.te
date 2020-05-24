@@ -7,6 +7,6 @@ allow init system_file:dir relabelfrom;
 allow init system_file:lnk_file relabelfrom;
 allow init system_file:file relabelfrom;
 allow init vendor_configs_file:dir relabelfrom;
-allow init vendor_configs_file:file relabelfrom;
+allow init vendor_configs_file:file { relabelfrom mounton };
 allow init vendor_file:dir relabelfrom;
 allow init sysfs:file setattr;
