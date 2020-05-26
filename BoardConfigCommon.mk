@@ -35,17 +35,15 @@ TARGET_CPU_VARIANT_RUNTIME := cortex-a53
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET     := 0x01000000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 TARGET_KERNEL_ARCH := arm
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-linaro-7.5/bin/arm-eabi-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
 ENABLE_CPUSETS := true
-
-# Initial API Level of the Device
-PRODUCT_SHIPPING_API_LEVEL := 23
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-smd"
@@ -76,10 +74,6 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
-
-# Doze mode
-PRODUCT_PACKAGES += \
-    Doze
 
 # Display
 TARGET_SCREEN_DENSITY := 480
@@ -164,8 +158,8 @@ TARGET_RIL_VARIANT := caf
 TARGET_USES_OLD_MNC_FORMAT := true
 
 # SELinux
-include device/qcom/sepolicy-legacy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/bq/msm8916-common/sepolicy
+#include device/qcom/sepolicy-legacy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += device/bq/msm8916-common/sepolicy
 
 # Shims
 TARGET_LD_SHIM_LIBS := \

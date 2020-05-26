@@ -2879,12 +2879,12 @@ RETURN VALUE
 SIDE EFFECTS
    N/A
 
-===========================================================================*/
+/*===========================================================================
 static int set_sched_policy(int tid, SchedPolicy policy)
 {
     return 0;
 }
-#endif /* USE_GLIB */
+*/#endif /* USE_GLIB */
 
 /*===========================================================================
 FUNCTION    loc_eng_read_config

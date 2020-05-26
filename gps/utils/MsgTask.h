@@ -57,7 +57,7 @@ public:
 
     // The method to be run before thread loop (conditionally repeatedly)
     // calls run()
-    virtual void prerun();
+  //  virtual void prerun();
 
     // The method to be run after thread loop (conditionally repeatedly)
     // calls run()
