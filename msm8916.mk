@@ -296,9 +296,8 @@ PRODUCT_PACKAGES += \
 # Telephony
 PRODUCT_PACKAGES += \
     qti-telephony-common \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
     telephony-ext
 
 # Thermal
