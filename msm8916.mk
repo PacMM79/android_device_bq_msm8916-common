@@ -288,6 +288,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+# RIL
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig \
+    libqsap_shim \
+    librmnetctl \
+    libxml2
+
 # Seccomp
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
@@ -295,15 +302,21 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
     libsensorndkbridge
 
 # Telephony
 PRODUCT_PACKAGES += \
-    qti-telephony-common \
-    qti-telephony-utils \
-    qti_telephony_utils.xml \
+    ims-ext-common \
+    ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    ims-ext-common \
     telephony-ext
 
 # Thermal
