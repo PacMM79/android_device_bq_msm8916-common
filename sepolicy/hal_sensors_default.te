@@ -1,0 +1,4 @@
+allow hal_sensors_default sensors_data_file:dir { search getattr };
+allow hal_sensors_default sensors_data_file:fifo_file { read write };
+allow hal_sensors_default system_data_file:dir { search write };
+allow hal_sensors_default sysfs:file { open read write };
