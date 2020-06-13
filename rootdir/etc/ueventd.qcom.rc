@@ -176,3 +176,13 @@
 
 # FRP
 /dev/block/platform/soc.0/7824900.sdhci/by-name/config    0660   system     system
+
+# ALSPS
+/dev/lsensor              0660   system     system
+/dev/psensor              0660   system     system
+
+# Proximity sensor
+/dev/input/event3         0660   system     system
+
+# Light sensor
+/dev/input/event4         0660   system     system
