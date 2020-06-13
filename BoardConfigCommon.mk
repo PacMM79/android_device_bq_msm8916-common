@@ -176,6 +176,9 @@ TARGET_LD_SHIM_LIBS := \
 # SurfaceFlinger
 TARGET_USE_AOSP_SURFACEFLINGER := true
 
+# Telephony
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
 
