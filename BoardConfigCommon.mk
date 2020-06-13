@@ -141,9 +141,6 @@ BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
-# Keymaster
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
