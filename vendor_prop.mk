@@ -60,6 +60,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.feature=1
 
+# Dalvik Heap
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=16m \
+    dalvik.vm.heapgrowthlimit=192m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=2m \
+    dalvik.vm.heapmaxfree=8m
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=480 \
@@ -89,7 +98,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0 \
     lockscreen.rot_override=true
 
-# HWUI
+# HWUI memory limits
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.texture_cache_size=72 \
     ro.hwui.layer_cache_size=48 \
