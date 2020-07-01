@@ -72,30 +72,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=480 \
-    debug.sf.enable_hwc_vds=1 \
     debug.egl.hw=0 \
+    debug.enable.sglscale=1 \
+    debug.gralloc.enable_fb_ubwc=1 \
+    debug.mdpcomp.logs=0 \
+    debug.sdm.support_writeback=0 \
     debug.sf.hw=0 \
     debug.sf.latch_unsignaled=1 \
-    persist.hwc.mdpcomp.enable=true \
+    debug.sf.recomputecrop=0 \
+    debug.sf.enable_gl_backpressure=1 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
-    ro.opengles.version=196610 \
-    sdm.debug.disable_skip_validate=1 \
-    debug.gralloc.enable_fb_ubwc=1 \
-    persist.camera.preview.ubwc=0 \
-    persist.camera.video.ubwc=0 \
     persist.hwc.enable_vds=1 \
-    debug.sf.recomputecrop=0 \
-    debug.enable.sglscale=1 \
+    persist.hwc.mdpcomp.enable=true \
+    ro.opengles.version=196610 \
+    ro.qualcomm.cabl=0 \
+    ro.vendor.display.cabl=2 \
+    sdm.debug.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=1 \
-    vendor.gralloc.enable_fb_ubwc=1 \
     vendor.display.disable_skip_validate=1 \
-    persist.debug.wfd.enable=1 \
-    vendor.video.disable.ubwc=1 \
-    vendor.gralloc.disable_wb_ubwc=1 \
-    persist.sys.wfd.nohdcp=1 \
-    persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0 \
+    vendor.gralloc.enable_fb_ubwc=1 \
     lockscreen.rot_override=true
 
 # HWUI memory limits
@@ -123,6 +119,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
     ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
 
+# DRM
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true
+
 # Enable B service adj transition by default
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sys.fw.bservice_enable=true \
@@ -146,25 +146,27 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
+    av.debug.disable.pers.cache=1 \
     debug.stagefright.omx_default_rank.sw-audio=1 \
     debug.stagefright.omx_default_rank=0 \
-    media.stagefright.enable-player=true \
-    media.stagefright.enable-http=true \
-    media.stagefright.enable-aac=true \
-    media.stagefright.enable-qcp=true \
-    media.stagefright.enable-fma2dp=true \
-    media.stagefright.enable-scan=true \
     media.msm8939hw=0 \
     media.msm8929hw=0 \
-    mm.enable.smoothstreaming=true \
+    media.stagefright.audio.sink=280 \
+    media.stagefright.thumbnail.prefer_hw_codecs=true \
     mmp.enable.3g2=true \
-    media.stagefright.use-awesome=false \
-    vidc.enc.narrow.searchrange=1 \
-    drm.service.enabled=true
+    vendor.audio.hw.aac.encoder=true \
+    vendor.mm.enable.qcom_parser=1048575 \
+    vendor.vidc.dec.downscalar_height=1088 \
+    vendor.vidc.dec.downscalar_width=1920 \
+    vendor.vidc.disable.split.mode=1 \
+    vendor.vidc.enc.disable.pq=true \
+    vendor.vidc.enc.disable_bframes=1 \
+    vendor.video.disable.ubwc=1
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
+    ro.vendor.extension_library=libqti-perfd-client.so \
+    ro.vendor.qti.sys.fw.bservice_enable=true
 
 # Set max background services
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -192,7 +194,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Time service
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.timed.enable=true
+    persist.vendor.delta_time.enable=true
+
+# Tcp
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.tcp.2g_init_rwnd=10
 
 # Trim
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -205,3 +211,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.usb.default.config=diag,serial_smd,serial_tty,mass_storage,adb
+
+# UI
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.use_fifo_ui=1
+
+# Wifi
+PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.interface=wlan0
+
+# Wifi-Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.wfd.virtual=0
