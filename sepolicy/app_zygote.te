@@ -1,0 +1,2 @@
+allow app_zygote ion_device:chr_file { getattr read write open };
+allow app_zygote zygote_exec:file read;
