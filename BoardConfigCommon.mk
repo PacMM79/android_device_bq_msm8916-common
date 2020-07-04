@@ -81,8 +81,10 @@ TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_NEEDS_LEGACY_CAMERA_HAL1_DYN_NATIVE_HANDLE := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
-TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
-    /system/vendor/bin/mm-qcamera-daemon=25
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /system/bin/cameraserver=25 \
+    /system/bin/mediaserver=25 \
+    /vendor/bin/mm-qcamera-daemon=25
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true

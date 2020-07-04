@@ -88,6 +88,10 @@ PRODUCT_PACKAGES += \
     camera.msm8916 \
     libcamera_parameters_shim \
     libmm-qcamera \
+    libbson \
+    libc_util \
+    libboringssl-compat \
+    libshims_camera \
     Snap
 
 PRODUCT_COPY_FILES += \
