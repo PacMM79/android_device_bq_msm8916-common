@@ -331,12 +331,7 @@ service thermal-engine /vendor/bin/thermal-engine
     socket thermal-send-rule stream 0660 system system
     group root
 
-service time_daemon /vendor/bin/time_daemon
-    class late_start
-    user root
-    group root
-
-service ppd /vendor/bin/mm-pp-daemon
+service ppd /system/vendor/bin/mm-pp-daemon
     class hal
     user system
     socket pps stream 0660 system system
