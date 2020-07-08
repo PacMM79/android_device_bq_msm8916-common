@@ -130,17 +130,6 @@ PRODUCT_PACKAGES += \
     libgenlock \
     libtinyxml
 
-# Properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.hwui.use_buffer_age=false
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.protected_contents=true \
-    ro.surface_flinger.vsync_event_phase_offset_ns=4000000 \
-    ro.surface_flinger.vsync_sf_event_phase_offset_ns=8000000 \
-    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-    ro.surface_flinger.max_virtual_display_dimension=2048
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
@@ -149,12 +138,6 @@ PRODUCT_PACKAGES += \
 # Encryption
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
-
-# limit dex2oat threads to improve thermals
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.boot-dex2oat-threads=8 \
-    dalvik.vm.dex2oat-threads=8 \
-    dalvik.vm.image-dex2oat-threads=8
 
 # Ebtables
 PRODUCT_PACKAGES += \

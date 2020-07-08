@@ -1,25 +1,44 @@
+# ART - Dalvik Heap
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.boot-dex2oat-threads=8 \
+    dalvik.vm.dex2oat-threads=8 \
+    dalvik.vm.image-dex2oat-threads=8 \
+    dalvik.vm.heapstartsize=16m \
+    dalvik.vm.heapgrowthlimit=192m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=2m \
+    dalvik.vm.heapmaxfree=8m
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
-    audio.offload.video=true \
     audio.deep_buffer.media=true \
+    audio.offload.disable=1 \
     audio.offload.min.duration.secs=30 \
-    persist.vendor.audio.fluence.voicecall=true \
-    persist.vendor.audio.fluence.voicerec=false \
+    audio.offload.pcm.16bit.enable=true \
+    audio.offload.pcm.24bit.enable=false \
+    audio.offload.video=true \
+    persist.vendor.audio.fluence.audiorec=true \
     persist.vendor.audio.fluence.speaker=true \
-    persist.sys.fm=qn8035 \
-    ro.vendor.audio.sdk.ssr=false \
+    persist.vendor.audio.fluence.voicecall=true \
+    persist.vendor.audio.fluence.voicerec=true \
+    ro.audio.flinger_standbytime_ms=300 \
+    ro.config.media_vol_steps=25 \
+    ro.config.vc_call_vol_steps=7 \
     ro.vendor.audio.sdk.fluencetype=fluence \
-    ro.fm.transmitter=false \
-    vendor.audio.tunnel.encode=false \
-    vendor.audio.av.streaming.offload.enable=true \
+    ro.vendor.audio.sdk.ssr=false \
+    vendor.audio.dolby.ds2.enabled=true \
     vendor.audio.offload.buffer.size.kb=64 \
     vendor.audio.offload.gapless.enabled=true \
+    vendor.audio.pp.asphere.enabled=true \
+    vendor.audio.tunnel.encode=false \
     vendor.audio_hal.period_size=192 \
     vendor.voice.path.for.pcm.voip=true \
-    ro.config.vc_call_vol_steps=7 \
-    ro.config.media_vol_steps=25
+    vendor.voice.playback.conc.disabled=true \
+    vendor.voice.record.conc.disabled=true \
+    vendor.voice.voip.conc.disabled=true \
+    vidc.enc.narrow.searchrange=1
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -60,18 +79,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.feature=1
 
-# Dalvik Heap
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=16m \
-    dalvik.vm.heapgrowthlimit=192m \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=2m \
-    dalvik.vm.heapmaxfree=8m
-
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=480 \
+    debug.hwui.use_buffer_age=false \
     debug.cpurend.vsync=false \
     debug.egl.hw=0 \
     debug.enable.sglscale=1 \
@@ -94,7 +105,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_default_color_mode=1 \
     vendor.display.disable_skip_validate=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
-    lockscreen.rot_override=true
+    lockscreen.rot_override=true \
+    debug.composition.type=c2d \
+    debug.mdpcomp.idletime=600 \
+    debug.sf.gpu_comp_tiling=1 \
+    sys.hwc.gpu_perf_mode=1
 
 # HWUI memory limits
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -116,11 +131,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_app_phase_offset_ns=1500000 \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000 \
-    ro.surface_flinger.use_color_management=true
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
-    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
+    ro.surface_flinger.use_color_management=true \
+    ro.surface_flinger.protected_contents=true \
+    ro.surface_flinger.vsync_event_phase_offset_ns=4000000 \
+    ro.surface_flinger.vsync_sf_event_phase_offset_ns=8000000 \
+    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+    ro.surface_flinger.max_virtual_display_dimension=2048
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -150,15 +166,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     av.debug.disable.pers.cache=1 \
+    debug.stagefright.ccodec=0 \
     debug.stagefright.omx_default_rank.sw-audio=1 \
     debug.stagefright.omx_default_rank=0 \
     media.msm8939hw=0 \
     media.msm8929hw=0 \
+    media.aac_51_output_enabled=true \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true \
     media.stagefright.audio.sink=280 \
     media.stagefright.thumbnail.prefer_hw_codecs=true \
     mmp.enable.3g2=true \
+    mm.enable.sec.smoothstreaming=true \
     vendor.audio.hw.aac.encoder=true \
-    vendor.mm.enable.qcom_parser=1048575 \
     vendor.vidc.dec.downscalar_height=1088 \
     vendor.vidc.dec.downscalar_width=1920 \
     vendor.vidc.disable.split.mode=1 \
@@ -197,6 +217,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Time service
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.timed.enable=true \
     persist.vendor.delta_time.enable=true
 
 # Tcp
@@ -215,14 +236,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.usb.default.config=diag,serial_smd,serial_tty,mass_storage,adb
 
-# UI
-PRODUCT_PROPERTY_OVERRIDES += \
-    sys.use_fifo_ui=1
-
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
-
-# Wifi-Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.wfd.virtual=0
