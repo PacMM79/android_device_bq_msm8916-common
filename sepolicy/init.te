@@ -15,3 +15,4 @@ allow init touchpanel_sysfs:file { open write };
 allow init vendor_file:file { execute_no_trans };
 allow init hwservicemanager:binder { call transfer };
 allow init system_app:binder call;
+allow init sysfs_leds:lnk_file { r_file_perms };
