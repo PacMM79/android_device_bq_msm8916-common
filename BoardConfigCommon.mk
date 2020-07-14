@@ -15,6 +15,8 @@
 # limitations under the License.
 #
 
+VENDOR_PATH := device/bq/msm8916-common
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8916
 TARGET_NO_BOOTLOADER := true
@@ -162,6 +164,10 @@ TARGET_PROVIDES_KEYMASTER := true
 # Healthd
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(VENDOR_PATH)/compatibility_matrix.xml
+
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
@@ -206,9 +212,6 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
-
-# Vendor Interface Manifest
-DEVICE_MANIFEST_FILE := device/bq/msm8916-common/manifest.xml
 
 # Widevine
 BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
