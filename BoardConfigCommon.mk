@@ -101,7 +101,6 @@ MALLOC_SVELTE := true
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Exclude serif fonts for saving system.img size.
 EXCLUDE_SERIF_FONTS := true
@@ -133,9 +132,6 @@ BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
-
-# Keymaster
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Lineagehw
 JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(DEVICE_PATH)/lineagehw|**/*.java
