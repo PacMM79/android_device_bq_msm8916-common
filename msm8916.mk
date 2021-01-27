@@ -357,7 +357,8 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service.bq_8916
 
 PRODUCT_PACKAGES += \
-    vndk-sp
+    vndk-sp \
+    Recorder
 
 # Wifi
 PRODUCT_PACKAGES += \
