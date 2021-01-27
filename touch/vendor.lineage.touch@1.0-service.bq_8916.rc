@@ -1,6 +1,10 @@
-on boot
+on init
+    # Key Disabler
     chmod 0660 /sys/android_touch/keypad_enable
     chown system system /sys/android_touch/keypad_enable
+    # Glove Mode
+    chown system system /sys/class/tp_glove/device/glove_enable
+    chmod 0660 /sys/class/tp_glove/device/glove_enable
 
 service vendor.touch-hal-1-0 /vendor/bin/hw/vendor.lineage.touch@1.0-service.bq_8916
     class hal

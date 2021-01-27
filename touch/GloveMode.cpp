@@ -18,7 +18,7 @@
 #include <android-base/logging.h>
 #include <android-base/strings.h>
 
-#include "KeyDisabler.h"
+#include "GloveMode.h"
 
 namespace vendor {
 namespace lineage {
@@ -26,19 +26,16 @@ namespace touch {
 namespace V1_0 {
 namespace implementation {
 
-constexpr const char kControlPath[] = "/sys/devices/soc.0/78b9000.i2c/i2c-5/5-004a/disable_keys";
-
-KeyDisabler::KeyDisabler() {
-    mHasKeyDisabler = !access(kControlPath, F_OK);
+GloveMode::GloveMode() {
 }
 
-// Methods from ::vendor::lineage::touch::V1_0::IKeyDisabler follow.
-Return<bool> KeyDisabler::isEnabled() {
+constexpr const char kControlPath[] = "/sys/class/tp_glove/device/glove_enable";
+
+// Methods from ::vendor::lineage::touch::V1_0::IGloveMode follow.
+Return<bool> GloveMode::isEnabled() {
     std::string buf;
 
-    if (!mHasKeyDisabler) return false;
-
-    if (!android::base::ReadFileToString(kControlPath, &buf)) {
+if (!android::base::ReadFileToString(kControlPath, &buf, true)) {
         LOG(ERROR) << "Failed to read " << kControlPath;
         return false;
     }
@@ -46,9 +43,8 @@ Return<bool> KeyDisabler::isEnabled() {
     return std::stoi(android::base::Trim(buf)) == 1;
 }
 
-Return<bool> KeyDisabler::setEnabled(bool enabled) {
-    if (!mHasKeyDisabler) return false;
-
+Return<bool> GloveMode::setEnabled(bool enabled) {
+    
     if (!android::base::WriteStringToFile((enabled ? "1" : "0"), kControlPath, true)) {
         LOG(ERROR) << "Failed to write " << kControlPath;
         return false;
