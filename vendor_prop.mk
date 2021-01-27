@@ -183,13 +183,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable_bframes=1 \
     vendor.video.disable.ubwc=1
 
+# OEM Unlock
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.oem_unlock_supported=0
+
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.vendor.qti.sys.fw.bservice_enable=true
-
-# Set max background services
-PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.sys.fw.bservice_enable=true \
     ro.config.max_starting_bg=8
 
 # Telephony
