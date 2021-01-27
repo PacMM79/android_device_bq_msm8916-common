@@ -126,16 +126,20 @@ PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    android.hardware.renderscript@1.0-impl \
-    android.hardware.renderscript@1.0-service \
     gralloc.msm8916 \
     copybit.msm8916 \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
     libdisplayconfig \
+    liboverlay \
     libqdMetaData.system \
     libgenlock \
-    libtinyxml
+    libtinyxml \
+    libtinyxml2
+
+# Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.use_buffer_age=false
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -290,7 +294,8 @@ PRODUCT_PACKAGES += \
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
+    android.hardware.renderscript@1.0-impl \
+    android.hardware.renderscript@1.0-service
 
 # RIL
 PRODUCT_PACKAGES += \
