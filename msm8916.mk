@@ -196,6 +196,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/quipc.conf:system/etc/quipc.conf \
     $(LOCAL_PATH)/gps/izat.conf:system/etc/izat.conf
 
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \

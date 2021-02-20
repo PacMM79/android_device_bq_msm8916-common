@@ -167,6 +167,8 @@ BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 # HIDL
 DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(VENDOR_PATH)/compatibility_matrix.xml
+PRODUCT_VENDOR_MOVE_ENABLED := true
+
 
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
