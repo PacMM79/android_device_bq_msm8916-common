@@ -94,8 +94,6 @@ on boot
     # Enable writing to led nodes from userspace
     chown system system /sys/class/leds/flashlight/brightness
     chown system system /sys/class/leds/flashlight-front/brightness
-    chown system camera /sys/class/leds/torch-light0/brightness
-    chmod 0660 /sys/class/leds/torch-light0/brightness
 
     # Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 2770 radio radio
@@ -223,10 +221,6 @@ on post-fs-data
     mkdir /data/misc/fm 0770 system system
     chmod 0770 /data/misc/fm
 
-    # Color calibration control
-    chown system system /sys/devices/virtual/graphics/fb0/rgb
-    chmod 0660 /sys/devices/virtual/graphics/fb0/rgb
-
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
@@ -351,11 +345,6 @@ on property:init.svc.surfaceflinger=running
 
 on property:init.svc.surfaceflinger=restarting
     stop ppd
-
-service per_mgr /system/vendor/bin/pm-service
-    class core
-    user system
-    group system
 
 service wcnss-service /vendor/bin/wcnss_service
     class late_start
