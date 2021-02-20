@@ -169,6 +169,8 @@ DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(VENDOR_PATH)/compatibility_matrix.xml
 PRODUCT_VENDOR_MOVE_ENABLED := true
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
 
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
