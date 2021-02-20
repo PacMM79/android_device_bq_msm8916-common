@@ -73,7 +73,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     morpho.denoiser.umaskthreshold=0 \
     morpho.denoiser.umaskweight=256 \
     persist.camera.cpp.duplication=false \
-    persist.camera.pip.support=0
+    persist.camera.pip.support=0 \
+    persist.camera.hal.debug.mask=0
 
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
