@@ -113,25 +113,28 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
-    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.configstore@1.1-service \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
+    vendor.display.config@1.0 \
     gralloc.msm8916 \
     copybit.msm8916 \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
-    libdisplayconfig \
-    liboverlay \
-    libqdMetaData.system \
     libgenlock \
-    libtinyxml \
-    libtinyxml2
+    libtinyxml
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.hwui.use_buffer_age=false
+    debug.composition.type=c2d \
+    debug.enable.sglscale=1 \
+    debug.hwui.use_buffer_age=false \
+    debug.mdpcomp.idletime=600 \
+    ro.opengles.version=196610 \
+    persist.hwc.mdpcomp.enable=true \
+    sys.hwc.gpu_perf_mode=1 \
+    persist.graphics.vulkan.disable=true
 
 # DRM
 PRODUCT_PACKAGES += \
