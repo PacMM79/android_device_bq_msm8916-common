@@ -39,7 +39,19 @@ PRODUCT_COPY_FILES += \
 
 # Art
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-flags=--no-watch-dog
+    persist.device_config.runtime_native.usap_pool_enabled=true \
+    persist.device_config.runtime_native.usap_pool_size_max=5 \
+    dalvik.vm.zygotemaxfailedboots=5 \
+    dalvik.vm.foreground-heap-growth-multiplier=4.0 \
+    dalvik.vm.dex2oat-flags=--no-watch-dog \
+    dalvik.vm.dex2oat-swap=false \
+    dalvik.vm.dex2oat-threads=4 \
+    dalvik.vm.madvise-random=true \
+    ro.vendor.qti.am.reschedule_service=true \
+    dalvik.vm.isa.arm.features=div \
+    persist.sys.dalvik.vm.lib.2=libart.so \
+    dalvik.vm.systemservercompilerfilter=speed-profile \
+    dalvik.vm.extra-opts=-Xcompiler-option --inline-max-code-units=0
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -385,6 +397,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Reduce system image size by limiting java debug info.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+
+# Do not include art debug targets
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 # Speed profile services and wifi-service to reduce RAM and storage.
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
