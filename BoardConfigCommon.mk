@@ -51,6 +51,7 @@ BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-linaro-7.5/bin/arm-eabi-
 ENABLE_CPUSETS := true
+TARGET_HAS_MEMFD_BACKPORT := true
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-smd"
