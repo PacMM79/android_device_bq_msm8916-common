@@ -294,14 +294,15 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.2 \
-    android.hardware.radio.config@1.0 \
-    android.hardware.secure_element@1.0 \
-    libprotobuf-cpp-full \
     libcnefeatureconfig \
-    libqsap_shim \
     librmnetctl \
     libxml2
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.data.qmi.adb_logmask=0 \
+    persist.radio.apm_sim_not_pwdn=1 \
+    persist.radio.add_power_save=1 \
+    ro.telephony.call_ring.multiple=false
 
 # Seccomp
 PRODUCT_COPY_FILES += \
@@ -314,18 +315,15 @@ PRODUCT_PACKAGES += \
     libsensorndkbridge
 
 # Telephony
-PRODUCT_PACKAGES += \
-    qti-telephony-common \
-    ims-ext-common \
-    ims_ext_common.xml \
-    qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml \
-    qti-telephony-utils \
-    qti_telephony_utils.xml \
-    telephony-ext
-
 PRODUCT_BOOT_JARS += \
-    telephony-ext
+    telephony-ext \
+
+PRODUCT_PACKAGES += \
+    telephony-ext \
+    ims-ext-common
+
+# Disable FaceUnlock
+TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK := true
 
 # Time
 PRODUCT_PACKAGES += \
