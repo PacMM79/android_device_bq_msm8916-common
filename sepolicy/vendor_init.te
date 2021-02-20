@@ -6,3 +6,4 @@ allow vendor_init firmware_file:file { read open getattr };
 allow vendor_init nfc_data_file:file { getattr };
 allow vendor_init proc:file { write };
 allow vendor_init cache_file:dir { add_name create getattr setattr search write };
+allow vendor_init device_config_runtime_native_prop:property_service set;
